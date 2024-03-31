@@ -1,0 +1,20 @@
+<div>
+    <ul *ngIf="!editMode">
+      <li>{{car.marka}}</li>
+      <li>{{car.model}}</li>
+      <li>{{car.rok_produkcji}}</li>
+      <li>
+        <button (click)="usunSamochod()">Usuń</button>
+        <button (click)="edytujSamochod()">Edytuj</button>
+      </li>
+    </ul>
+    <ul *ngIf="editMode">
+      <li><input type="text" [(ngModel)]="car.marka"></li>
+      <li><input type="text" [(ngModel)]="car.model"></li>
+      <li><input type="number" [(ngModel)]="car.rok_produkcji"></li>
+      <li>
+        <button (click)="anulujEdycje()">Anuluj</button>
+        <button (click)="zapiszEdycje()">Zapisz</button>
+      </li>
+    </ul>
+  </div>

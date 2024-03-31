@@ -1,0 +1,19 @@
+<div id="galeria">
+    <form (submit)="dodajSamochod()">
+      <label for="marka">Marka</label>
+      <input type="text" name="marka" id="marka" [(ngModel)]="nowaSamochod.marka">
+  
+      <label for="model">Model</label>
+      <input type="text" name="model" id="model" [(ngModel)]="nowaSamochod.model">
+  
+      <label for="rok_produkcji">Rok produkcji</label>
+      <input type="text" name="rok_produkcji" id="rok_produkcji" [(ngModel)]="nowaSamochod.rok_produkcji">
+  
+      <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+  
+    <div *ngFor="let samochod of car">
+      <app-car [car]="samochod" (carDeleted)="samochodUsuniety(samochod)"></app-car>
+    </div>
+  </div>
+  
